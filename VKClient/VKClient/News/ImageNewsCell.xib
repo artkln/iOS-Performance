@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageNewsCell" rowHeight="467" id="KGk-i7-Jjw" customClass="ImageNewsCell" customModule="VKClient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="467"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="467"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="20L-Lo-MQ7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                        <color key="backgroundColor" red="0.84313725490000002" green="0.81176470590000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="20L-Lo-MQ7" secondAttribute="height" multiplier="1:1" id="2vb-ex-FQF"/>
+                        </constraints>
+                        <collectionViewLayout key="collectionViewLayout" id="Ul1-3a-fs7" customClass="WallImagesCollectionViewLayout" customModule="VKClient" customModuleProvider="target"/>
+                        <connections>
+                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="l6i-H9-Ekq"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="vAh-lN-VbY"/>
+                        </connections>
+                    </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qwp-dD-le6" customClass="LikesControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="10" y="414" width="48" height="25"/>
+                        <color key="backgroundColor" red="0.84313725490000002" green="0.81176470590000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="5fl-2D-vVP"/>
+                            <constraint firstAttribute="height" constant="25" id="Wve-gz-aXs"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="likesCount">
+                                <integer key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="image" keyPath="likeImage" value="heart.fill" catalog="system"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2S-1T-JTd" customClass="CommentsControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="68" y="414" width="48" height="25"/>
+                        <color key="backgroundColor" red="0.84313725490000002" green="0.81176470590000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="8L3-zg-gU9"/>
+                            <constraint firstAttribute="width" constant="48" id="LvP-ii-E0w"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="commentsCount">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="image" keyPath="commentImage" value="text.bubble.fill" catalog="system"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLk-OP-lNp" customClass="SharesControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="126" y="414" width="48" height="25"/>
+                        <color key="backgroundColor" red="0.84313725490000002" green="0.81176470590000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="Hxq-2u-0ti"/>
+                            <constraint firstAttribute="height" constant="25" id="J8z-1R-axw"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="sharesCount">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="image" keyPath="shareImage" value="arrowshape.turn.up.right.fill" catalog="system"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpL-cU-vjf" customClass="ViewsControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="342" y="414" width="62" height="25"/>
+                        <color key="backgroundColor" red="0.84313725490000002" green="0.81176470590000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="F6I-G2-D0e"/>
+                            <constraint firstAttribute="width" constant="62" id="LxU-ac-Jhi"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="viewsCount">
+                                <integer key="value" value="180"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="image" keyPath="viewImage" value="eye.fill" catalog="system"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gLk-OP-lNp" firstAttribute="leading" secondItem="Y2S-1T-JTd" secondAttribute="trailing" constant="10" id="6Zs-ok-tuv"/>
+                    <constraint firstAttribute="trailing" secondItem="hpL-cU-vjf" secondAttribute="trailing" constant="10" id="9wI-k0-BNA"/>
+                    <constraint firstItem="hpL-cU-vjf" firstAttribute="top" secondItem="20L-Lo-MQ7" secondAttribute="bottom" id="AwT-i8-nRw"/>
+                    <constraint firstItem="20L-Lo-MQ7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="E5c-zj-nKv"/>
+                    <constraint firstAttribute="trailing" secondItem="20L-Lo-MQ7" secondAttribute="trailing" id="GFt-bD-OCo"/>
+                    <constraint firstItem="20L-Lo-MQ7" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="HYI-ah-6Vs"/>
+                    <constraint firstAttribute="bottom" secondItem="hpL-cU-vjf" secondAttribute="bottom" constant="20" id="Hl6-ez-BsG"/>
+                    <constraint firstItem="qwp-dD-le6" firstAttribute="top" secondItem="20L-Lo-MQ7" secondAttribute="bottom" id="I5f-IA-1Lk"/>
+                    <constraint firstItem="qwp-dD-le6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ISQ-u7-C59"/>
+                    <constraint firstItem="Y2S-1T-JTd" firstAttribute="top" secondItem="20L-Lo-MQ7" secondAttribute="bottom" id="NGY-ry-QUd"/>
+                    <constraint firstAttribute="bottom" secondItem="gLk-OP-lNp" secondAttribute="bottom" constant="20" id="Pkq-Db-6mK"/>
+                    <constraint firstItem="Y2S-1T-JTd" firstAttribute="leading" secondItem="qwp-dD-le6" secondAttribute="trailing" constant="10" id="Zpg-bc-Ghf"/>
+                    <constraint firstItem="gLk-OP-lNp" firstAttribute="top" secondItem="20L-Lo-MQ7" secondAttribute="bottom" id="fpu-ap-XC1"/>
+                    <constraint firstItem="20L-Lo-MQ7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gQ5-5i-lie"/>
+                    <constraint firstAttribute="bottom" secondItem="qwp-dD-le6" secondAttribute="bottom" constant="20" id="lzn-81-pUJ"/>
+                    <constraint firstAttribute="bottom" secondItem="Y2S-1T-JTd" secondAttribute="bottom" constant="20" id="x3w-xp-2HK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.84313725490000002" green="0.81176470590000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="wallImages" destination="20L-Lo-MQ7" id="T09-WN-fMb"/>
+            </connections>
+            <point key="canvasLocation" x="169.56521739130437" y="82.700892857142847"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
+        <image name="eye.fill" catalog="system" width="128" height="78"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

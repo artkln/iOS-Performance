@@ -38,10 +38,6 @@ import UIKit
     override func layoutSubviews() {
         super.layoutSubviews()
         stackView.frame = bounds
-        
-        if commentsCount < 10 {
-            stackView.frame.size.width = 42
-        }
     }
 
     private func commonInit() {

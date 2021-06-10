@@ -102,7 +102,8 @@ class MyGroupsController: UITableViewController, UISearchBarDelegate {
         
         guard let realm = try? Realm() else { return }
         
-        filteredData = searchControl.searchText.isEmpty ? groupsData : realm.objects(Group.self).filter("name CONTAINS[c] %@", searchControl.searchText)
+        filteredData = searchControl.searchText.isEmpty ? groupsData :
+            realm.objects(Group.self).filter("name CONTAINS[c] %@", searchControl.searchText)
         
         tableView.reloadData()
     }

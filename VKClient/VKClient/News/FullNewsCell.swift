@@ -1,22 +1,19 @@
 //
-//  NewsCell.swift
-//  VK Client
+//  FullNewsCell.swift
+//  VKClient
 //
-//  Created by Артём Калинин on 24.03.2021.
+//  Created by Артём Калинин on 09.06.2021.
 //
 
 import UIKit
 
-class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
-
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var profileImage: RoundedImage!
-    @IBOutlet weak var date: UILabel!
+class FullNewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     @IBOutlet weak var wallText: UILabel!
     
-    @IBOutlet private weak var wallImages: UICollectionView! {
+    @IBOutlet weak var wallImages: UICollectionView! {
         didSet {
-            self.wallImages.register(UINib.init(nibName: "WallImagesCell", bundle: nil), forCellWithReuseIdentifier: "WallImagesCell")
+            self.wallImages.register(UINib(nibName: "WallImagesCell", bundle: nil), forCellWithReuseIdentifier: "WallImagesCell")
         }
     }
     
@@ -24,8 +21,6 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        name.text = ""
-        date.text = ""
         wallText.text = ""
         cellImages = []
     }
@@ -38,10 +33,7 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(name: String, profileImage: UIImage, date: String, wallText: String, images: [UIImage]) {
-        self.name.text = name
-        self.profileImage.image = profileImage
-        self.date.text = date
+    func configure(wallText: String, images: [UIImage]) {
         self.wallText.text = wallText
         self.cellImages = images
         self.wallImages.reloadData()
@@ -62,5 +54,3 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
         return cell
     }
 }
-
-
